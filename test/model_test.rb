@@ -17,7 +17,7 @@ class ModelTest < BaseTest
   end
 
   test 'model with user_model' do
-    assert_equal 'Person', Comment.relations['updated_by'][:class_name]
+    assert_equal 'Person', Comment.relations["updated_by"].class_name
   end
 
   test 'set_created_by' do

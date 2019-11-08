@@ -23,12 +23,20 @@ module Mongoid
         end
 
         def set_user_model!
-          @model.relations[config.created_name.to_s].try(:[]=, :class_name, user_model)
-          @model.relations[config.updated_name.to_s].try(:[]=, :class_name, user_model)
-          @model.relations[config.deleted_name.to_s].try(:[]=, :class_name, user_model)
+          if Mongoid::VERSION.to_f < 7.0
+            %i[created_name updated_name deleted_name].each do |attr|
+              @model.relations[config.send(attr).to_s].try(:[]=, :class_name, user_model)
+            end
+          else
+            %i[created_name updated_name deleted_name].each do |attr|
+              if @model.relations[config.send(attr).to_s]
+                @model.relations[config.send(attr).to_s].instance_variable_set :@class_name, user_model
+                @model.relations[config.send(attr).to_s].options[:class_name] = user_model
+              end
+            end
+          end
         end
       end
     end
   end
 end
-
