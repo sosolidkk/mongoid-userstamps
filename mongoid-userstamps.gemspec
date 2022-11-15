@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name = "mongoid-userstamps"
   s.version = Mongoid::Userstamps::VERSION
   s.authors = ["Geoffroy Planquart", "Thomas Boerger", "Johnny Shields", "Bharat Gupta"]
-  s.homepage = "https://github.com/tbpro/mongoid_userstamp"
+  s.homepage = "https://github.com/CreaLettres/mongoid_userstamp"
   s.license = "MIT"
   s.summary = "Userstamps for Mongoid"
   s.description = "Userstamps for creator and updater fields using Mongoid"
