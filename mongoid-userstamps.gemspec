@@ -5,12 +5,12 @@ require "mongoid/userstamps/version"
 Gem::Specification.new do |s|
   s.name = "mongoid-userstamps"
   s.version = Mongoid::Userstamps::VERSION
-  s.authors = ["Geoffroy Planquart", "Thomas Boerger", "Johnny Shields", "Bharat Gupta"]
-  s.homepage = "https://github.com/CreaLettres/mongoid_userstamp"
+  s.authors = ["Geoffroy Planquart", "Thomas Boerger", "Johnny Shields", "Bharat Gupta", "Thomas Kuntz"]
+  s.homepage = "https://github.com/CreaLettres/mongoid-userstamps"
   s.license = "MIT"
   s.summary = "Userstamps for Mongoid"
   s.description = "Userstamps for creator and updater fields using Mongoid"
-  s.email = ["geoffroy@planquart.fr", "tboerger@tbpro.de"]
+  s.email = ["thomaskuntz67@gmail.com", "geoffroy@planquart.fr", "tboerger@tbpro.de"]
 
   s.files = `git ls-files`.split($/)
   s.executables = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
